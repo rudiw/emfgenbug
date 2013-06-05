@@ -1,0 +1,9 @@
+h1. EMF GenModel Bug
+
+Just a reminder that EPackage in @.ecore@ file is different than the genmodel-generated Java EPackage.
+
+do NOT load EPackage from .ecore file, because the EClassifier index number would be different
+than the actual genmodel-generated .java
+
+so we use Class.forName instead to get the generated EPackage class, then get the eINSTANCE
+from there
